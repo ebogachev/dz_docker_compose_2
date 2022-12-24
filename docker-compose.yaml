@@ -1,10 +1,8 @@
 version: '3.1'
-
 services:
-
   db:
     container_name: mysql
-    image: mysql:5.5
+    image: mysql:5
     hostname: mysql
     ports:
       - "3306:3306"
@@ -18,8 +16,8 @@ services:
       MYSQL_ROOT_PASSWORD: root
 
   java-app:
-    container_name: app
-    hostname: app
+    container_name: dd
+    hostname: dd
     build:
       context: ./build
     ports:
@@ -32,3 +30,4 @@ services:
 
 volumes:
   mysql_data:
+
