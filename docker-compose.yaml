@@ -24,11 +24,10 @@ services:
     ports:
       - "8080:8080"
     environment:
-      DB_USERNAME: root
-      DB_PASSWORD: root
-      DB_IP: mysql
-      DB_NAME: dd
-
+      MYSQL_USER: root
+      MYSQL_PASSWORD: root
+      MYSQL_DATABASE: dd
+      MYSQL_ROOT_PASSWORD: root
 volumes:
   db_vol:
 
