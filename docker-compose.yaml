@@ -1,7 +1,5 @@
-version: '3.1'
-
+version: '3.3'
 services:
-
   db:
     container_name: mysql
     image: mysql:5
@@ -16,11 +14,13 @@ services:
       MYSQL_PASSWORD: root
       MYSQL_DATABASE: dd
       MYSQL_ROOT_PASSWORD: root
-
   build:
     container_name: build
+    depends_on:
+      - mysql
     build:
       context: .
+      dockerfile: Dockerfile
     ports:
       - "8080:8080"
     environment:
